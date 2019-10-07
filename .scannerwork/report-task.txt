@@ -1,0 +1,6 @@
+projectKey=ErrorCode400:wxapp
+serverUrl=https://sonarqube.secoder.net
+serverVersion=7.6.0.21501
+dashboardUrl=https://sonarqube.secoder.net/dashboard?id=ErrorCode400%3Awxapp
+ceTaskId=AW2QO1nFM3XGqvMe_4iC
+ceTaskUrl=https://sonarqube.secoder.net/api/ce/task?id=AW2QO1nFM3XGqvMe_4iC

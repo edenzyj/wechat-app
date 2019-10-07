@@ -1,0 +1,11 @@
+<!--pages/user/user.wxml-->
+<view class="header" wx:if="{{regFlag==true}}">
+  <image src="{{thumb}}" class="thumb"></image>
+  <text class="nickname">{{nickname}}</text>
+</view>
+<navigator url="/pages/loginpage/loginpage" wx:else>
+  <view class="header">
+    <image src="/image/ano_user.jpg" class="thumb"></image>
+    <text class="nickname">未登录</text>
+  </view>
+</navigator>
