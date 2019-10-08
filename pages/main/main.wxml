@@ -18,4 +18,13 @@
         </block>
     </swiper>
 
+    <block wx:for="{{list}}">
+    <navigator url="../home/home?id={{item.channel_id}}" hover-class="navigator-hover">//id为要传的值的key,下个页面会用到
+        <image src="{{item.avatar}}" class="pic"></image>
+        <view class="right">
+            <text class="title">{{item.name}}</text>
+        </view>
+    </navigator>
+    </block>
+
 </view>

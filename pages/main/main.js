@@ -1,4 +1,5 @@
 // pages/main/main.js
+var list;
 Page({
 
   /**
@@ -20,7 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      list: list
+    })
   },
 
   /**
@@ -70,5 +74,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  }
+})
+
+wx.request({
+  url: 'http://www.antisi.com/product/class/', //仅为示例，并非真实的接口地址
+  data: {},
+  method: 'GET', //必须为大写（例如：POST）
+  header: {
+    'content-type': 'application/json'
+  },
+  success: function (res) {
+    // console.log(res.data);
+    list = res.data.data.list;
+    // id=res.data.data.list.channel_id;
+    // console.log(id);
   }
 })
