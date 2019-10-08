@@ -3,6 +3,7 @@
     "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
+<<<<<<< HEAD
     "pages/activity/activity",
     "pages/equipment/equipment",
     "pages/user/user",
@@ -15,6 +16,15 @@
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
+=======
+    "record.txt"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "安提思睡眠仪管理",
+    "navigationBarTextStyle": "black"
+>>>>>>> pby
   },
   
   "tabBar": {
