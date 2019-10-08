@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/activity/activity",
+    "pages/equipment/equipment",
+    "pages/user/user",
+    "pages/search/search",
+    "pages/loginpage/loginpage"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序",
+    "navigationBarBackgroundColor": "#AB956D",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true
+  },
+  
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#AB956D",
+    "borderStyle": "black",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "image/home0.png",
+        "selectedIconPath": "image/home1.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "iconPath": "image/agreement0.png",
+        "selectedIconPath": "image/agreement1.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/equipment/equipment",
+        "iconPath": "image/MTR0.png",
+        "selectedIconPath": "image/MTR1.png",
+        "text": "设备"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "image/nickname0.png",
+        "selectedIconPath": "image/nickname1.png",
+        "text": "我"
+      }
+    ]
+  },
+  
+  "sitemapLocation": "sitemap.json"
+}

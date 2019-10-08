@@ -1,0 +1,28 @@
+/* pages/user/user.wxss */
+@import '/common.wxss';
+.header{
+    position: relative;
+    height: 170rpx;
+    line-height: 100rpx;
+    padding:30rpx 30rpx 30rpx 150rpx;
+    box-sizing: border-box;
+    background: #AB956D;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.header .thumb{
+    position: absolute;
+    left: 40rpx;
+    top: 10rpx;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+}
+
+.header .nickname{
+    position: absolute;
+    left: 200rpx;
+    top: 30rpx;
+    font-size: 38rpx;
+}
