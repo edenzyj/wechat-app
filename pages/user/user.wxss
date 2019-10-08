@@ -26,3 +26,15 @@
     top: 30rpx;
     font-size: 38rpx;
 }
+
+.minemenu {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-top: 50rpx;
+    padding-left: 40rpx;
+    font-size: 40rpx;
+    box-sizing: border-box;
+}

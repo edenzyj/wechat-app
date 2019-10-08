@@ -3,7 +3,6 @@
     "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
-<<<<<<< HEAD
     "pages/activity/activity",
     "pages/equipment/equipment",
     "pages/user/user",
@@ -12,19 +11,11 @@
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "安提思睡眠仪",
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
-=======
-    "record.txt"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "安提思睡眠仪管理",
-    "navigationBarTextStyle": "black"
->>>>>>> pby
+
   },
   
   "tabBar": {
@@ -43,19 +34,19 @@
         "pagePath": "pages/activity/activity",
         "iconPath": "image/agreement0.png",
         "selectedIconPath": "image/agreement1.png",
-        "text": "活动"
+        "text": "充值"
       },
       {
         "pagePath": "pages/equipment/equipment",
         "iconPath": "image/MTR0.png",
         "selectedIconPath": "image/MTR1.png",
-        "text": "设备"
+        "text": "仪器"
       },
       {
         "pagePath": "pages/user/user",
         "iconPath": "image/nickname0.png",
         "selectedIconPath": "image/nickname1.png",
-        "text": "我"
+        "text": "我的"
       }
     ]
   },
