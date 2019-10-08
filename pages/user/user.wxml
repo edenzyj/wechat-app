@@ -1,0 +1,35 @@
+<!--pages/user/user.wxml-->
+<view class="header" wx:if="{{regFlag==true}}">
+  <image src="{{thumb}}" class="thumb"></image>
+  <text class="nickname">{{nickname}}</text>
+</view>
+<navigator url="/pages/loginpage/loginpage" wx:else>
+  <view class="header">
+    <image src="/image/ano_user.jpg" class="thumb"></image>
+    <text class="nickname">未登录</text>
+  </view>
+  <!-->设备、购物、奖励查询、提成查询、其他（我的医生、我的测试、我的睡眠、我的运动）<-->
+  
+</navigator>
+
+<scroll-view>
+<navigator url = "/page/menu/shop/shop">
+  <view class = "minemenu">
+    <image src = "/image/home0.png" style = "height: 60rpx; width: 90rpx;" mode="aspectFit"></image>
+    <text>购物</text>
+  </view>
+</navigator>
+<navigator url = "/page/menu/check/check">
+  <view class = "minemenu">
+    <image src = "/image/agreement0.png" style = "height: 60rpx; width: 90rpx;" mode="aspectFit"></image>
+    <text>奖励</text>
+  </view>
+</navigator>
+<navigator url = "/page/menu/else/else">
+  <view class = "minemenu">
+    <image src = "/image/nickname0.png" style = "height: 60rpx; width: 90rpx;" mode="aspectFit"></image>
+    <text>其他</text>
+  </view>
+</navigator>
+
+</scroll-view>

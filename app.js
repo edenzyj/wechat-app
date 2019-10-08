@@ -2,16 +2,33 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    var that = this;
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: function (res) {
+        var data = {'code': res.code}
+        wx.request({
+          url: that.globalData.loginURL,
+          method: 'POST',
+          data: data,
+          success: function (res) {
+            if (res.data.code != 200) {
+              that.alert({ 'content': res.data.msg });
+              return;
+            }
+            if ("token" in res.data.data) {
+              that.setCache("token", res.data.data.token);
+              that.globalData.regFlag = true;
+            }
+          }
+        });
       }
-    })
+    });
+    /*
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -31,9 +48,14 @@ App({
           })
         }
       }
-    })
+    })*/
+  },
+  getLoginURL: function() {
+    return globalData.loginURL
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    regFlag: false,
+    loginURL: "web-ErrorCode400.app.secoder.net/login"
   }
 })
