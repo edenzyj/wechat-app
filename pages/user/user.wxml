@@ -31,5 +31,5 @@
     <text>其他</text>
   </view>
 </navigator>
-
+<view class="weui-cell__bd">查看更多</view>
 </scroll-view>
