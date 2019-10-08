@@ -1,0 +1,3 @@
+<!--pages/loginpage/loginpage.wxml-->
+<text>pages/loginpage/loginpage.wxml</text>
+<button class="confirm-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="mylogin">授权登录</button>

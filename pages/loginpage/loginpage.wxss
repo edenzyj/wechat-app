@@ -1,0 +1,4 @@
+/* pages/loginpage/loginpage.wxss */
+.confirm-btn {
+  margin-top: 15px;
+}

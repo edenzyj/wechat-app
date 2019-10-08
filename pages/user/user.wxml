@@ -1,0 +1,62 @@
+<!--pages/user/user.wxml-->
+<view class="header" wx:if="{{regFlag==true}}">
+  <image src="{{thumb}}" class="thumb"></image>
+  <text class="nickname">{{nickname}}</text>
+</view>
+<navigator url="/pages/loginpage/loginpage" wx:else>
+  <view class="header">
+    <image src="/image/ano_user.jpg" class="thumb"></image>
+    <text class="nickname">未登录</text>
+  </view>
+  <!-->设备、购物、奖励查询、提成查询、其他（我的医生、我的测试、我的睡眠、我的运动）<-->
+  
+</navigator>
+
+<view class = "page page__bd">
+  <view class="weui-panel weui-panel_access">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">购物</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">奖励</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">查询</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+    <view class="weui-panel weui-panel_access">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">我的医生</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">我的睡眠</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/agreement0.png" style="width: 25px;height: 25px;margin-right: 5px" /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">我的运动</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>
