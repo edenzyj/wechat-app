@@ -1,6 +1,6 @@
 /* pages/user/user.wxss */
 @import '/common.wxss';
-@import '/weui/style/weui.wxss';
+@import '/weui.wxss';
 .header{
     position: relative;
     height: 170rpx;
