@@ -1,1 +1,2 @@
 /* pages/query/query.wxss */
+@import '/weui.wxss';

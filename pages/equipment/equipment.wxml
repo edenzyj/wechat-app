@@ -1,2 +1,66 @@
 <!--pages/equipment/equipment.wxml-->
-<text>pages/equipment/equipment.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">安提思睡眠仪</view>
+        <view class="page__desc">控制面板</view>
+    </view>
+    <view class="page__bd">
+
+      <view class="weui-panel">
+        <view class="weui-panel__hd">仪器介绍</view>
+          <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">安提斯睡眠仪</view>
+                <view class="weui-media-box__desc">这是一台非常可爱的安提思睡眠仪。</view>
+                <view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">文字来源</view>
+                    <view class="weui-media-box__info__meta">时间</view>
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</view>
+                </view>
+            </view>
+        </view>
+      </view>
+
+        <view class="weui-panel">
+            <view class="weui-panel__hd">控制</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>连接仪器</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>选项</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>更多</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+      <view class="weui-panel weui-panel_access" style = "margin-top: 30px;">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+        <!--链接到网店网址-->
+    <!--      <view class="weui-cell__hd"><image src="/image/购物.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>-->
+          <view class="weui-cell__bd weui-cell_primary " style = "text-align: center;">
+              <view style="font-size:36rpx; color: #F00;">解除绑定</view>
+          </view>
+        </navigator>
+
+      </view>
+
+    </view>
+</view>
