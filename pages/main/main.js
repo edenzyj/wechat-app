@@ -1,4 +1,5 @@
 // pages/main/main.js
+var id,url1,url2,list=[],that,data,listadd;
 Page({
 
   /**
@@ -20,7 +21,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 页面初始化options为页面跳转所带来的参数
+    id=options.id;
+    that = this;
+    url1 ="http://www.antisi.com/product/class/"+id+"xxx";
+    queryRequest(url1);
+    // 请求数据
+    function queryRequest(url){
+      wx.request({
+        url: url,
+        data: {},
+        method: 'GET',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function(res){
+          console.log(res.data);
+          data = res.data.data;
+          list = res.data.data.list;
+          for(var i=0;i<list.length;i++){
+            var a=timeString(list[i].display_time);
+            list[i].time=a;
+            list[i].name=list[i].user.name;
+            list[i].headpic=list[i].user.avatar;
+          }
+          that.setData({
+            list:list
+          })
+        }
+      })
+      // 时间戳转换为时间
+      function timeString(time){
+        var newDate = new Date();
+        var result = newDate.toLocalDateString();
+        return result;
+      }
+    }
   },
 
   /**

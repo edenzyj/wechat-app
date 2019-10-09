@@ -1,4 +1,5 @@
 // pages/classification/classification.js
+var list;
 Page({
 
   /**
@@ -12,7 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      list:list
+    })
   },
 
   /**
@@ -62,5 +66,16 @@ Page({
    */
   onShareAppMessage: function () {
 
+  }
+})
+wx.request({
+  url: 'http://www.antisi.com/product/class/',
+  data: {},
+  method: 'GET',
+  header: {
+    'content-type': 'application/json'
+  },
+  success: function(res){
+    list=res.data.data.list;
   }
 })
