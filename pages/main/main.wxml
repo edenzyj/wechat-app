@@ -18,4 +18,37 @@
         </block>
     </swiper>
 
+    <view class="container">
+        <view class="showerror" style="display:{{showerror}}">
+            <image src="../../image/cry80.png" style="height:100rpx;width:100rpx"></image>
+            <view class="errortext">
+                {{errMessage}}
+            </view>
+        </view>
+    </view>
+
+    <view class="content-article-detail" style="display:{{display}}">
+        <view class="entry-title">
+            {{detail.title.rendered}}
+        </view>
+        <view class="entry-date">
+            <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
+            <text class="entry-date-text">{{detailDate}}</text>
+            <block wx:if="{{detail.category_name !=null}}">
+                <image src="../../image/category.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+                <text class="entry-icon-text">{{detail.category_name}}</text>
+            </block>
+            <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{total_comments}}</text>
+            <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{detail.pageviews}}</text>
+            <image src="../../image/home-like.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{likeCount}}</text>
+        </view>
+        <view class="entry-summary">
+            <image src="../../image/modle.jpg" style="height:50rpx;width:100rpx;"></image>
+            <text class="entry-summary-text">这里放富文本摘要</text>
+        </view>
+    </view>
+
 </view>
