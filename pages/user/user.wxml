@@ -28,14 +28,14 @@
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url = "/pages/reward/reward" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd"><image src="/image/奖励.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>
       <view class="weui-cell__bd weui-cell_primary">
           <view style="font-size:36rpx">奖励</view>
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/query/query" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__hd"><image src="/image/查询.png" style="width: 24px;height: 24px;margin-right: 12px"  /></view>
         <view class="weui-cell__bd weui-cell_primary">
             <view style="font-size:36rpx">查询</view>
@@ -44,6 +44,13 @@
     </navigator>
   </view>
     <view class="weui-panel weui-panel_access">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd"><image src="/image/设备.png" style="width: 24px;height: 24px;margin-right: 12px"  /></view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view style="font-size:36rpx">我的设备</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__hd"><image src="/image/医生.png" style="width: 24px;height: 24px;margin-right: 12px"  /></view>
         <view class="weui-cell__bd weui-cell_primary">
