@@ -31,12 +31,6 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/activity/activity",
-        "iconPath": "image/agreement0.png",
-        "selectedIconPath": "image/agreement1.png",
-        "text": "充值"
-      },
-      {
         "pagePath": "pages/equipment/equipment",
         "iconPath": "image/MTR0.png",
         "selectedIconPath": "image/MTR1.png",
