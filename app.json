@@ -7,7 +7,9 @@
     "pages/equipment/equipment",
     "pages/user/user",
     "pages/search/search",
-    "pages/loginpage/loginpage"
+    "pages/loginpage/loginpage",
+    "pages/reward/reward",
+    "pages/query/query"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -15,9 +17,7 @@
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
-
   },
-  
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
@@ -29,12 +29,6 @@
         "iconPath": "image/home0.png",
         "selectedIconPath": "image/home1.png",
         "text": "主页"
-      },
-      {
-        "pagePath": "pages/activity/activity",
-        "iconPath": "image/agreement0.png",
-        "selectedIconPath": "image/agreement1.png",
-        "text": "充值"
       },
       {
         "pagePath": "pages/equipment/equipment",
@@ -50,6 +44,5 @@
       }
     ]
   },
-  
   "sitemapLocation": "sitemap.json"
 }
