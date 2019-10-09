@@ -1,26 +1,18 @@
-// pages/main/main.js
+// pages/classification/classification.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '/image/b1.jpg',
-      '/image/b2.jpg',
-      '/image/b3.jpg'
-    ],
-    indicatorDots: false,
-    autoplay: false,
-    interval: 3000,
-    duration: 800,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
