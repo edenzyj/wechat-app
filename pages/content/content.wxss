@@ -1,0 +1,5 @@
+/* pages/content/content.wxss */
+@import '/common.wxss';
+.content-text{
+  margin-left: 30rpx;
+}

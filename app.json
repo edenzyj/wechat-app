@@ -3,6 +3,7 @@
     "pages/main/main",
     "pages/classification/classification",
     "pages/index/index",
+    "pages/content/content",
     "pages/logs/logs",
     "pages/activity/activity",
     "pages/equipment/equipment",
