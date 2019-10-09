@@ -1,5 +1,6 @@
 /* pages/user/user.wxss */
 @import '/common.wxss';
+@import '/weui.wxss';
 .header{
     position: relative;
     height: 170rpx;
@@ -25,4 +26,16 @@
     left: 200rpx;
     top: 30rpx;
     font-size: 38rpx;
+}
+
+.minemenu {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-top: 50rpx;
+    padding-left: 40rpx;
+    font-size: 40rpx;
+    box-sizing: border-box;
 }

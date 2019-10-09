@@ -9,16 +9,17 @@
     "pages/equipment/equipment",
     "pages/user/user",
     "pages/search/search",
-    "pages/loginpage/loginpage"
+    "pages/loginpage/loginpage",
+    "pages/reward/reward",
+    "pages/query/query"
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "安提思睡眠仪",
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
   },
-  
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
@@ -32,25 +33,18 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/activity/activity",
-        "iconPath": "image/agreement0.png",
-        "selectedIconPath": "image/agreement1.png",
-        "text": "活动"
-      },
-      {
         "pagePath": "pages/equipment/equipment",
         "iconPath": "image/MTR0.png",
         "selectedIconPath": "image/MTR1.png",
-        "text": "设备"
+        "text": "仪器"
       },
       {
         "pagePath": "pages/user/user",
         "iconPath": "image/nickname0.png",
         "selectedIconPath": "image/nickname1.png",
-        "text": "我"
+        "text": "我的"
       }
     ]
   },
-  
   "sitemapLocation": "sitemap.json"
 }

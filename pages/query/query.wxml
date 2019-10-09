@@ -1,0 +1,32 @@
+<!--pages/query/query.wxml-->
+<view class = "page page__bd">
+  <view class="weui-panel weui-panel_access">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <!--链接到网店网址-->
+<!--      <view class="weui-cell__hd"><image src="/image/购物.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>-->
+      <view class="weui-cell__bd weui-cell_primary">
+          <view style="font-size:36rpx">使用记录</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <!--链接到充值入口-->
+<!--      <view class="weui-cell__hd"><image src="/image/购物.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>-->
+      <view class="weui-cell__bd weui-cell_primary">
+          <view style="font-size:36rpx">充值记录</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <!--链接到网店网址-->
+<!--      <view class="weui-cell__hd"><image src="/image/购物.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>-->
+      <view class="weui-cell__bd weui-cell_primary">
+          <view style="font-size:36rpx">业绩查询</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+
+  </view>
+</view>
