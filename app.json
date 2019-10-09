@@ -7,7 +7,9 @@
     "pages/equipment/equipment",
     "pages/user/user",
     "pages/search/search",
-    "pages/loginpage/loginpage"
+    "pages/loginpage/loginpage",
+    "pages/reward/reward",
+    "pages/query/query"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -15,9 +17,7 @@
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
-
   },
-  
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
@@ -44,6 +44,5 @@
       }
     ]
   },
-  
   "sitemapLocation": "sitemap.json"
 }
