@@ -50,11 +50,11 @@ swiper-item image {
 }
 .entry-summary {
   font-size: 32rpx;
-  line-height: 64rpx;
+  line-height: 80rpx;
   letter-spacing: 1px;
 }
 .entry-summary image {
-  width: 100% !important;
+  width: 15% !important;
 }
 .entry-summary-text{
   margin-left: 30rpx;

@@ -7,9 +7,9 @@ Page({
    */
   data: {
     imgUrls: [
-      '/image/a1.png',
+      '/image/a3.png',
       '/image/a2.png',
-      '/image/a3.png'
+      '/image/a1.png'
     ],
     indicatorDots: false,
     autoplay: false,
