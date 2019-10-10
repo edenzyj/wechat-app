@@ -1,0 +1,12 @@
+stages:
+  - test
+
+sonar-scanner:
+  image: harryleafchen/debian-curl-tar
+  stage: test
+  tags:
+    - secoder
+  script:
+    - curl -s "http://10.0.0.11/sonar-scanner.tar.gz" -o "/tmp/sonar-scanner.tar.gz"
+    - tar -xf "/tmp/sonar-scanner.tar.gz" -C /tmp
+    - /tmp/sonar-scanner/bin/sonar-scanner
