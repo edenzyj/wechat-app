@@ -25,7 +25,7 @@
             </view>
             <view class="entry-summary">
                 <image src="../../image/modle.jpg" style="height:50rpx;width:100rpx;"></image>
-                <text class="entry-summary-text">这里放富文本摘要</text>
+                <text class="entry-summary-text">文章摘要</text>
             </view>
             <view class="entry-date">
                 <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>

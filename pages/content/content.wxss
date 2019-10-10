@@ -1,5 +1,8 @@
 /* pages/content/content.wxss */
 @import '/common.wxss';
+.content image{
+  width: 100% !important;
+}
 .content-text{
   margin-left: 30rpx;
 }
