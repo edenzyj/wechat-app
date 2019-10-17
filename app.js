@@ -54,6 +54,9 @@ App({
     return globalData.loginURL
   },
   globalData: {
+    nickname: "未登录",
+    head: "/image/ano_user.jpg",
+    hasthumb: false,
     userInfo: null,
     regFlag: false,
     loginURL: "web-ErrorCode400.app.secoder.net/login"

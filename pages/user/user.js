@@ -8,7 +8,8 @@ Page({
   data: {
     regFlag: false,
     thumb: '',
-    nickname: ''
+    nickname: '',
+    hasthumb: false,
   },
 
   /**
@@ -20,6 +21,7 @@ Page({
     /**
      * 获取用户信息
      */
+    /*
     wx.getUserInfo({
       success: function (res) {
         self.setData({
@@ -28,6 +30,7 @@ Page({
         })
       }
     })
+     */
   },
 
   /**
@@ -41,7 +44,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      nickname: app.globalData.nickname,
+      thumb: app.globalData.head,
+      hasthumb: app.globalData.hasthumb,
+    })
   },
 
   /**
