@@ -39,8 +39,8 @@ Page({
         mydata['code'] = res.code;
         console.log(mydata)
         wx.request({
-          url: "http://web-ErrorCode400.app.secoder.net/login/",
-//          url: "http://127.0.0.1:8000/login/",
+//          url: "http://web-ErrorCode400.app.secoder.net/login/",
+          url: "http://127.0.0.1:8000/login/",
 
           method: 'POST',
           header: {
@@ -56,6 +56,10 @@ Page({
               return;
             }
             console.log(res.data);
+            app.globalData.userInfo = res.data;
+            app.globalData.nickname = res.data.username;
+            app.globalData.head = res.data.avatar;
+            console.log(res.data.avatar);
             const _token = JSON.stringify(res.data.token);
             //console.log(_token);
             wx.setStorageSync("token", _token);
