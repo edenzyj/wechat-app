@@ -7,8 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    content: ''
   },
+
+  mylogin: function (e) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  },
+
 
   mylogin: function (e) {
     var that = this;
@@ -17,37 +28,57 @@ Page({
       return;
     }
 
-    var data = e.detail.userInfo;
+    var mydata = e.detail.userInfo;
     wx.login({
       success: function (res) {
         if (!res.code) {
-          app.alert({ 'content': '登录失败，请再次点击' });
+          console.log('登录失败，请再次点击');
           return;
         }
-        data['code'] = res.code;
+        console.log('123456');
+        mydata['code'] = res.code;
+        console.log(mydata)
         wx.request({
-          url: app.getLoginURL(),
+          url: "http://web-ErrorCode400.app.secoder.net/login/",
+//          url: "http://127.0.0.1:8000/login/",
+
           method: 'POST',
-          data: data,
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: mydata,
           success: function (res) {
-            if (res.data.code != 200) {
-              app.alert({ 'content': res.data.msg });
+            console.log('456789');
+            //console.log(res);
+            if (res.statusCode != 200) {
+              console.log(res.data.msg );
+              console.log(res.statusCode);
               return;
             }
-            app.setCache("token", res.data.data.token);
+            console.log(res.data);
+            const _token = JSON.stringify(res.data.token);
+            //console.log(_token);
+            wx.setStorageSync("token", _token);
+            wx.setStorageSync("openId", res.data.openId);
+            console.log(_token);
+            console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
           }
         });
+        /*wx.request({
+        url: "http://127.0.0.1:8000/testcount/",
+        success: function (res) {
+        if (res.statusCode == 200) {
+        console.log(res.data);
+        }
+        else {
+        console.log('123');
+        }
+        }
+        });*/
       }
     });
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
   },
 
   /**
