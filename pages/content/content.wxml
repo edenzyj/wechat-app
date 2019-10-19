@@ -1,6 +1,14 @@
 <!--pages/content/content.wxml-->
 
+<view class = "content" wx:for="{{page}}">
+  <image wx:if="{{item.type==true}}" src="{{item.src}}" style = "{{item.style}}"/>
+  <text wx:else class = "content-text">{{item.content}} </text>
+</view>
+
+
+
 <view class="content">
+    
     <image src="../../image/sleep.jpg" style="height:540rpx;width:720rpx;"></image>
     <text class="content-text">
         人脑的重量仅有3磅（1.36千克）左右，约为平均成人体重的2%。然而，这个器官却消耗了人体20％~25%的能量。在这过程中，大脑会产生大量可能有毒的垃圾蛋白和其他生物废物。成人的大脑每天需要清除7克垃圾蛋白，并用全新的蛋白替换。这个数字意味着大脑每个月会产生半磅（约227克）废物，一年内就能产生3磅垃圾，和大脑总质量相当。 
