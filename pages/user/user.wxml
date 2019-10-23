@@ -22,7 +22,7 @@
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <!--链接到充值入口-->
       <view class="weui-cell__hd"><image src="/image/invest.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>
       <view class="weui-cell__bd weui-cell_primary">
@@ -78,13 +78,6 @@
         <view class="weui-cell__hd"><image src="/image/sport.png" style="width: 24px;height: 24px;margin-right: 12px"  /></view>
         <view class="weui-cell__bd weui-cell_primary">
             <view style="font-size:36rpx">我的运动</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd"><image src="/image/phone.png" style="width: 24px;height: 24px;margin-right: 12px"  /></view>
-        <view class="weui-cell__bd weui-cell_primary">
-            <view style="font-size:36rpx">我的手机</view>
         </view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>

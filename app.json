@@ -11,7 +11,8 @@
     "pages/search/search",
     "pages/loginpage/loginpage",
     "pages/reward/reward",
-    "pages/query/query"
+    "pages/query/query",
+    "pages/charge/charge"
   ],
   "window": {
     "navigationBarTextStyle": "white",

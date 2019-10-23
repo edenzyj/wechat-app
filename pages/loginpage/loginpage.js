@@ -63,7 +63,7 @@ Page({
             const _token = JSON.stringify(res.data.token);
             //console.log(_token);
             wx.setStorageSync("token", _token);
-            wx.setStorageSync("openId", res.data.openId);
+            wx.setStorageSync("openid", res.data.openid);
             console.log(_token);
             console.log(res.data.openid);
             //that.goToIndex();

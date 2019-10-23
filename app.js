@@ -59,6 +59,6 @@ App({
     hasthumb: false,
     userInfo: null,
     regFlag: false,
-    loginURL: "web-ErrorCode400.app.secoder.net/login"
+    loginURL: "127.0.0.1:8000/login"
   }
 })
