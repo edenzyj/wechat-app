@@ -6,7 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["充值满减", "积分折扣", "会员特价"],
+    options: [
+//      {
+//        title:"",
+//        desc:"",
+//        price:""
+//      }
+      {
+        title: "限时特惠",
+        desc: "充值满100送额外20积分",
+        price: 100
+      },
+      {
+        title: "限时特惠",
+        desc: "充值满100送额外20积分",
+        price: 100
+      },
+    ],
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0
