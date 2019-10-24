@@ -39,8 +39,8 @@ Page({
         mydata['code'] = res.code;
         console.log(mydata)
         wx.request({
-//          url: "http://web-ErrorCode400.app.secoder.net/login/",
-          url: "http://127.0.0.1:8000/login/",
+//          url: "https://web-ErrorCode400.app.secoder.net/login/",
+          url: app.globalData.baseURL+"login/",
 
           method: 'POST',
           header: {
@@ -49,7 +49,7 @@ Page({
           data: mydata,
           success: function (res) {
             console.log('456789');
-            //console.log(res);
+            console.log(res.data);
             if (res.statusCode != 200) {
               console.log(res.data.msg );
               console.log(res.statusCode);
@@ -68,6 +68,15 @@ Page({
             console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
+            wx.showToast({
+              title: '登录成功',
+              duration: 1000
+            });
+            setTimeout(function () {
+              //要延时执行的代码
+              wx.navigateBack({})
+
+            }, 1000) //延迟时间 这里是1秒
           }
         });
         /*wx.request({

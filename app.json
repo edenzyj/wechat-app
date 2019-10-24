@@ -12,7 +12,9 @@
     "pages/loginpage/loginpage",
     "pages/reward/reward",
     "pages/query/query",
-    "pages/charge/charge"
+    "pages/charge/charge",
+    "pages/account/account",
+    "pages/transfer/transfer"
   ],
   "window": {
     "navigationBarTextStyle": "white",
