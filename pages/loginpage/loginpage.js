@@ -39,8 +39,8 @@ Page({
         mydata['code'] = res.code;
         console.log(mydata)
         wx.request({
-//          url: "http://web-ErrorCode400.app.secoder.net/login/",
-          url: "http://127.0.0.1:8000/login/",
+          url: "https://web-ErrorCode400.app.secoder.net/login/",
+//          url: "http://127.0.0.1:8000/login/",
 
           method: 'POST',
           header: {
@@ -49,7 +49,7 @@ Page({
           data: mydata,
           success: function (res) {
             console.log('456789');
-            //console.log(res);
+            console.log(res.data);
             if (res.statusCode != 200) {
               console.log(res.data.msg );
               console.log(res.statusCode);
