@@ -1,13 +1,27 @@
 // pages/account/account.js
+const app = getApp() 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    thumb: '',
+    nickname: '',
+    grids: [{
+      name: "资金",
+      src: "/image/invest.png",
+      value: 1234.02
+    }, {
+      name: "积分",
+      src: "/image/score.png",
+      value: 234
+    }, {
+      name: "使用权",
+      src: "/image/left.png",
+      value: 3
+    }],
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +40,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      nickname: app.globalData.nickname,
+      thumb: app.globalData.head,
+    })
   },
 
   /**

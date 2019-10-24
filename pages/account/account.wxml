@@ -1,2 +1,32 @@
 <!--pages/account/account.wxml-->
-<text>pages/account/account.wxml</text>
+<view class="header">
+  <image src="{{thumb}}" class="thumb"></image>
+  <text class="nickname">{{nickname}}</text>
+</view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for-items="{{grids}}" wx:key="{{index}}">
+                <navigator url="" class="weui-grid">
+                    <image class="weui-grid__icon" src="{{item.src}}" />
+                    <view class="weui-grid__label">{{item.name}}</view>
+                    <view class="weui-grid__label weui-media-box__desc">{{item.value}}</view>
+                </navigator>
+            </block>
+        </view>
+        <view class="weui-panel weui-panel_access">
+        <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            
+            <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">充值</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">余额转让</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </view>
+
