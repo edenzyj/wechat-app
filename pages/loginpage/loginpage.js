@@ -39,8 +39,8 @@ Page({
         mydata['code'] = res.code;
         console.log(mydata)
         wx.request({
-          url: "https://web-ErrorCode400.app.secoder.net/login/",
-//          url: "http://127.0.0.1:8000/login/",
+//          url: "https://web-ErrorCode400.app.secoder.net/login/",
+          url: "http://192.168.1.102:8000/login/",
 
           method: 'POST',
           header: {
@@ -68,6 +68,7 @@ Page({
             console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
+            wx.navigateBack({})
           }
         });
         /*wx.request({

@@ -11,7 +11,7 @@
                                     <view class="weui-cell__bd weui-cell_primary">
                                         <view>{{item.title}}</view>
                                     </view>
-                                    <view class="weui-cell__ft"><button>购买</button></view>
+                                    <view class="weui-cell__ft"><button bindtap="sendcharge" data-id="{{index}}">购买</button></view>
                                   
                                   </view>
                                 </view>
