@@ -9,12 +9,7 @@ Page({
     thumb: '',
     nickname: '',
     vip: 0,
-    account: {
-      bank:0,
-      points:0,
-      usage_count:0,
-      vip_lever: 0,
-    },
+    account: app.globalData.account,
   },
   /**
    * 生命周期函数--监听页面加载
@@ -55,35 +50,15 @@ Page({
       nickname: app.globalData.nickname,
       thumb: app.globalData.head,
     })
-    const _jwt = wx.getStorageSync('token');
-    const jwt = JSON.parse(_jwt);
-    var bearer_jwt = `Bearer ${jwt}`
-    var header = {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Authorization": bearer_jwt
-    }
-    const _openid = wx.getStorageSync('openid');
+    app.update_account()
+    setTimeout(function () {
+      //要延时执行的代码
+      self.setData({
+        account: app.globalData.account,
+      })
+    }, 100) //延迟时间 这里是1秒
 
-    var mydata = { openid: _openid };
-    //账户界面加载时从后端获取用户余额
 
-    wx.request({
-      //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
-      url: app.globalData.baseURL+"get_app_account_data/",
-      method: 'POST',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": bearer_jwt
-      },
-      data: mydata,
-      success: function (res) {
-        console.log(res.data)
-        self.setData({
-          account: res.data,
-        })
-        console.log(self.data.account)
-      }
-    })
   },
 
   /**
