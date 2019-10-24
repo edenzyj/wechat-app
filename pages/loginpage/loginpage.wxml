@@ -1,3 +1,13 @@
 <!--pages/loginpage/loginpage.wxml-->
-<text>pages/loginpage/loginpage.wxml</text>
-<button class="confirm-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="mylogin">授权登录</button>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">授权登录</view>
+        <view class="page__desc">使用微信帐号授权并登录您的账户</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="mylogin">授权登录</button>
+        </view>
+    </view>
+</view>

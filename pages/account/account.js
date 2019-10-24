@@ -13,6 +13,7 @@ Page({
       bank:0,
       points:0,
       usage_count:0,
+      vip_lever: 0,
     },
   },
   /**
@@ -68,7 +69,7 @@ Page({
 
     wx.request({
       //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
-      url: "http://192.168.1.102:8000/get_app_account_data/",
+      url: app.globalData.baseURL+"get_app_account_data/",
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",

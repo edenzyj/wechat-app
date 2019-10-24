@@ -59,6 +59,8 @@ App({
     hasthumb: false,
     userInfo: null,
     regFlag: false,
-    loginURL: "127.0.0.1:8000/login"
+    loginURL: "127.0.0.1:8000/login",
+    baseURL: "http://192.168.1.102:8000/"
+//    baseURL: "https://web-ErrorCode400.app.secoder.net/"
   }
 })

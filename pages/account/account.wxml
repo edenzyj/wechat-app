@@ -2,6 +2,7 @@
 <view class="header">
   <image src="{{thumb}}" class="thumb"></image>
   <text class="nickname">{{nickname}}</text>
+  <text class="viplevel">VIP等级：{{account.vip_lever}}</text>
 </view>
     <view class="page__bd">
         <view class="weui-grids">

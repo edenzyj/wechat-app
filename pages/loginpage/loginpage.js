@@ -40,7 +40,7 @@ Page({
         console.log(mydata)
         wx.request({
 //          url: "https://web-ErrorCode400.app.secoder.net/login/",
-          url: "http://192.168.1.102:8000/login/",
+          url: app.globalData.baseURL+"login/",
 
           method: 'POST',
           header: {
@@ -68,7 +68,15 @@ Page({
             console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
-            wx.navigateBack({})
+            wx.showToast({
+              title: '登录成功',
+              duration: 1000
+            });
+            setTimeout(function () {
+              //要延时执行的代码
+              wx.navigateBack({})
+
+            }, 1000) //延迟时间 这里是1秒
           }
         });
         /*wx.request({

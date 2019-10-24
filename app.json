@@ -13,7 +13,8 @@
     "pages/reward/reward",
     "pages/query/query",
     "pages/charge/charge",
-    "pages/account/account"
+    "pages/account/account",
+    "pages/transfer/transfer"
   ],
   "window": {
     "navigationBarTextStyle": "white",

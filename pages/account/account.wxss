@@ -24,6 +24,13 @@
 .header .nickname{
     position: absolute;
     left: 200rpx;
-    top: 30rpx;
-    font-size: 38rpx;
+    top: 12rpx;
+    font-size: 36rpx;
+}
+.header .viplevel{
+    position: absolute;
+    left: 200rpx;
+    top: 54rpx;
+    font-size: 24rpx;
+    color: rgba(255, 255, 0, 0.8);
 }

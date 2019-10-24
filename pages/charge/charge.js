@@ -46,8 +46,7 @@ Page({
     const _openid = wx.getStorageSync('openid');
     var mydata = {openid: _openid};
     wx.request({
-      //url: "https://web-ErrorCode400.app.secoder.net/get_discount/",
-      url: "http://192.168.1.102:8000/get_discount/",
+      url: app.globalData.baseURL+"get_discount/",
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -160,7 +159,7 @@ Page({
 
     wx.request({
       //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
-      url: "http://192.168.1.102:8000/change_app_account/",
+      url: app.globalData.baseURL+"change_app_account/",
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -170,6 +169,10 @@ Page({
       success: function (res) {
         console.log(res.data)
         console.log("充值成功")
+        wx.showToast({
+          title: '充值成功！',
+          duration: 1500
+        });
       }
     })
   }
