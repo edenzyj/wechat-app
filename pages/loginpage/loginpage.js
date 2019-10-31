@@ -68,6 +68,7 @@ Page({
             console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
+            app.update_account()
             wx.showToast({
               title: '登录成功',
               duration: 1000
