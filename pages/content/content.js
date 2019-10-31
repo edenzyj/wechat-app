@@ -1,4 +1,6 @@
 // pages/content/content.js
+const app = getApp()
+
 Page({
 
   /**
@@ -27,6 +29,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('father = '+options.shareUserId);
+    app.globalData.account.father = options.shareUserId;
     var page = this.page;
     wx.request({
       //          url: "http://web-ErrorCode400.app.secoder.net/login/",
@@ -117,6 +121,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    console.log("share on content" + wx.getStorageSync('openid'));
+    return {
+      path: '/pages/content/content?shareUserId=' + wx.getStorageSync('openid')
+    }
   }
 })

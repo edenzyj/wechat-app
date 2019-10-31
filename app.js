@@ -92,7 +92,7 @@ App({
     userInfo: null,
     regFlag: false,
     loginURL: "127.0.0.1:8000/login",
-    baseURL: "http://183.173.71.216:8000/",
+    baseURL: "http://192.168.1.106:8000/",
 //    baseURL: "https://web-ErrorCode400.app.secoder.net/"
     k: 1.0,
     account: {
@@ -100,6 +100,8 @@ App({
       points: 0,
       usage_count: 0,
       vip_lever: 0,
+      father: '',
+      fund: 0,
     },
   },
 })

@@ -37,6 +37,10 @@ Page({
         }
         console.log('123456');
         mydata['code'] = res.code;
+        if(app.globalData.account.father != '') {
+          mydata['father'] = app.globalData.account.father;
+          console.log(app.globalData.account.father);
+        }
         console.log(mydata)
         wx.request({
 //          url: "https://web-ErrorCode400.app.secoder.net/login/",
