@@ -1,2 +1,28 @@
-<!--pages/transfer/transfer.wxml-->
-<text>pages/transfer/transfer.wxml</text>
+<view class="page">
+  <view class="page__hd">
+      <view class="page__title">积分充值</view>
+      <view class="page__desc">将钱包余额转为积分</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells__title">转换规则：￥1.00=1积分</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">资金余额</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入转换金额" bindinput="inputing"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">目标积分</view>
+            </view>
+            <view class="weui-cell__bd">
+                <view class="weui-input" style="color: rgba(0,0,0,0.6);">{{target_score}}</view>
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn" type="primary" bindtap="mytransfer">确认转换</button>
+  </view>
+</view>

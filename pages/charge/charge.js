@@ -169,6 +169,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         console.log("充值成功")
+        app.update_account()
         wx.showToast({
           title: '充值成功！',
           duration: 1500

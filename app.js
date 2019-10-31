@@ -50,6 +50,38 @@ App({
       }
     })*/
   },
+  update_account: function () {
+    var self = this
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
+    var header = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": bearer_jwt
+    }
+    const _openid = wx.getStorageSync('openid');
+
+    var mydata = { openid: _openid };
+    //账户界面加载时从后端获取用户余额
+
+    wx.request({
+      //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
+      url: self.globalData.baseURL + "get_app_account_data/",
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: mydata,
+      success: function (res) {
+        //        console.log(res.data)
+        self.globalData.account = res.data
+        //        console.log(self.data.account)
+      }
+    })
+
+  },
+
   getLoginURL: function() {
     return globalData.loginURL
   },
@@ -60,7 +92,16 @@ App({
     userInfo: null,
     regFlag: false,
     loginURL: "127.0.0.1:8000/login",
-    baseURL: "http://192.168.1.102:8000/"
+    baseURL: "http://192.168.1.106:8000/",
 //    baseURL: "https://web-ErrorCode400.app.secoder.net/"
-  }
+    k: 1.0,
+    account: {
+      bank: 0,
+      points: 0,
+      usage_count: 0,
+      vip_lever: 0,
+      father: '',
+      fund: 0,
+    },
+  },
 })
