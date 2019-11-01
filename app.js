@@ -87,7 +87,7 @@ App({
   },
   globalData: {
     nickname: "未登录",
-    head: "/image/ano_user.jpg",
+    head: "/image/no_user.png",
     hasthumb: false,
     userInfo: null,
     regFlag: false,
