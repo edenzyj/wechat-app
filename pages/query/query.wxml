@@ -9,7 +9,7 @@
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/record/record?choice=0" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <!--链接到充值入口-->
 <!--      <view class="weui-cell__hd"><image src="/image/购物.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>-->
       <view class="weui-cell__bd weui-cell_primary">

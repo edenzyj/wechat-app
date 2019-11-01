@@ -37,7 +37,7 @@ Page({
         }
         console.log('123456');
         mydata['code'] = res.code;
-        if(app.globalData.account.father != '') {
+        if(app.globalData.account.father != null) {
           mydata['father'] = app.globalData.account.father;
           console.log(app.globalData.account.father);
         }

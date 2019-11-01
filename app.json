@@ -15,7 +15,8 @@
     "pages/charge/charge",
     "pages/account/account",
     "pages/transfer/transfer",
-    "pages/reward_fund/reward_fund"
+    "pages/reward_fund/reward_fund",
+    "pages/record/record"
   ],
   "window": {
     "navigationBarTextStyle": "white",

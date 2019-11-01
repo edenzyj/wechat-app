@@ -1,4 +1,5 @@
 // pages/query/query.js
+const app = getApp()
 Page({
 
   /**
@@ -12,6 +13,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.regFlag === false) {
+      wx.showToast({
+        title: '尚未登录',
+        image: "/image/warning.png",
+        duration: 2000
+      });
+      setTimeout(function () {
+        //要延时执行的代码
+        wx.navigateBack({})
+
+      }, 2000) //延迟时间 这里是1秒
+      return;
+    }
 
   },
 
