@@ -7,7 +7,8 @@
             <view class="weui-form-preview__hd" style="margin-top: 20px;">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">{{name}}金额</view>
-                    <view class="weui-form-preview__value_in-hd">¥{{item.fields.spend}}</view>
+                    <view class="weui-form-preview__value_in-hd" wx:if="{{choice==0}}">¥{{item.fields.spend}}</view>
+                    <view class="weui-form-preview__value_in-hd" wx:else>¥{{item.fields.fund}}</view>
                 </view>
             </view>
             <view class="weui-form-preview__bd">

@@ -31,7 +31,10 @@ Page({
     }
     */
     app.update_account()
-    fund = app.globatData.account.fund
+    console.log(app.globalData.account)
+    this.setData({
+      fund: app.globalData.account.fund,
+    })
   },
 
   /**
