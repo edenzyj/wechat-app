@@ -1,6 +1,6 @@
 <!--pages/main/main.wxml-->
 
-<view class="main">
+<view class="main page page__bd">
     <view class="search">
         <navigator url="/pages/search/search">
             <view class="search-text">
@@ -10,7 +10,7 @@
         </navigator>
     </view>
 
-    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style="margin-top:10px;">
         <block wx:for="{{imgUrls}}" wx:key="{{index}}">
             <swiper-item>
                 <image src="{{item}}" class="slide-image" width="100%"/>
@@ -18,30 +18,28 @@
         </block>
     </swiper>
 
-    <view class="content-article-detail" style="display:{{display}}">
-        <navigator url="/pages/content/content">
-            <view class="entry-title">
-                {{detail.title.rendered}}
-            </view>
-            <view class="entry-summary">
-                <image src="../../image/modle.jpg" style="height:50rpx;width:100rpx;"></image>
-                <text class="entry-summary-text">文章摘要</text>
-            </view>
-            <view class="entry-date">
-                <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
-                <text class="entry-date-text">{{detailDate}}</text>
-                <block wx:if="{{detail.category_name !=null}}">
-                    <image src="../../image/category.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-                    <text class="entry-icon-text">{{detail.category_name}}</text>
-                </block>
-                <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{total_comments}}</text>
-                <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{detail.pageviews}}</text>
-                <image src="../../image/home-like.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{likeCount}}</text>
-            </view>
+    <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}">
+        <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="../../image/modle.jpg" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">文章标题</view>
+            <view class="weui-media-box__desc">文章摘要，这里可以写的很长很长很长很长很长很长很长很长很长很长很长很长很长很长</view>
+        </view>
+        
         </navigator>
+        <view class="entry-date">
+            <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
+            <text class="entry-date-text">{{detailDate}}2019-11-1 21:00</text>
+            <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{total_comments}}comments</text>
+            <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{detail.pageviews}}pageviews</text>
+            <image src="../../image/home-like.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">{{likeCount}}likeCount</text>
+        </view>
+        
     </view>
 
 </view>

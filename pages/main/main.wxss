@@ -1,5 +1,6 @@
 /* pages/main/main.wxss */
 @import '/common.wxss';
+@import '/weui.wxss';
 .search{
     padding: 20rpx;
 }
