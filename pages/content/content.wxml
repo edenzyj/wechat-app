@@ -1,11 +1,18 @@
 <!--pages/content/content.wxml-->
 
-<view class = "content" wx:for="{{page}}">
-  <image wx:if="{{item.type==true}}" src="{{item.src}}" style = "{{item.style}}"/>
-  <text wx:else class = "content-text">{{item.content}} </text>
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../templates/header.wxml"/>
+<view class="container">
+    <template is="tempHeader"/>
+    <view class="content-article ">
+          <view class="entry-title">
+              {{pageData.title.rendered}}
+          </view>
+          <view class="entry-summary">
+              <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          </view>
+    </view>
 </view>
-
-
 
 <view class="content">
     
