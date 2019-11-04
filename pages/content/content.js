@@ -22,8 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.fetchData(options.id),
-      this.fetchPagesData()
+    this.fetchData(options.id);
+    this.fetchPagesData();
     console.log('father = ' + options.shareUserId);
     app.globalData.account.father = options.shareUserId;
     var page = this.page;
