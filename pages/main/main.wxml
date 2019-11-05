@@ -20,17 +20,21 @@
 
     <import src="../../wxParse/wxParse.wxml"/>
     
-    <view class="container">
-        <template is="tempHeader"/>
-        <view class="content-article ">
-            <view class="entry-title">
-                {{pageData.title.rendered}}
-            </view>
-            <view class="entry-summary">
-                <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
+        <view class="topic-common-list" style="display:{{isCategoryPage}}">
+            <view class="topic-list-item">
+                <image src="{{pagesListImage}}" class="cover"></image>
+                <view class="topic-content-title">
+                    <text>{{pagesList.title}}</text>
+                </view>
+                <view class="topic-content-title-line"></view>
+                <view class="topic-content-brief">
+                    <text>{{pagesList.content}}</text>
+                </view>
             </view>
         </view>
-    </view>
+    </scroll-view>
+
 
     <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}">
         <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">

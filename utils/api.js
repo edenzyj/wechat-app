@@ -80,17 +80,17 @@ module.exports = {
   // 获取内容页数据
   getPostByID: function (id) {
 
-    return HOST_URI + 'api/rich_list/';
+    return HOST_URI + id + 'rich/文章id.html';
   },
   // 获取页面列表数据
   getPages: function () {
 
-    return HOST_URI + 'pages';
+    return HOST_URI + 'rich_list/';
   },
 
   // 获取页面列表数据
   getPageByID: function (id, obj) {
-    return HOST_URI + 'api/rich_list/';
+    return HOST_URI + 'rich_render/';
   },
   //获取分类列表
   getCategories: function () {
