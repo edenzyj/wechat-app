@@ -176,12 +176,6 @@ Page({
         self.setData({
           pagesList: data
         })
-        for (var i = 0; i < data.length; i++) {
-          self.setData({
-            wxParseTitle: WxParse.wxParse('article', 'html', data[i].title, self, 5),
-            wxParseId: WxParse.wxParse('article', 'html', data[i].id, self, 5)
-          });
-        }
       }
     });
   }

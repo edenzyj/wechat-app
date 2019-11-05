@@ -22,19 +22,27 @@
     
     <scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
         <view class="topic-common-list" style="display:{{isCategoryPage}}">
-            <view class="topic-list-item">
-                <image src="{{pagesListImage}}" class="cover"></image>
-                <view class="topic-content-title">
-                    <text>{{pagesList.title}}</text>
-                </view>
-                <view class="topic-content-title-line"></view>
-                <view class="topic-content-brief">
-                    <text>{{pagesList.content}}</text>
-                </view>
+            <view class="topic-list-item"  wx:for="{{pageList}}">
+                <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" data-id="{{item.id}}">
+                    <image src="{{item.first_img}}" class="cover"></image>
+                    <view class="topic-content-title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="topic-content-title-line"></view>
+                    <view class="topic-content-brief">
+                        <text>{{item.content}}</text>
+                    </view>
+                    <view>
+                        <text class="authorName">作者：{{item.author}}</text>
+                    </view>
+                    <view>
+                        <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
+                        <text class="entry-date-text">{{item.time}}</text>
+                    </view>
+                </navigator>
             </view>
         </view>
     </scroll-view>
-
 
     <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}">
         <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
