@@ -23,7 +23,7 @@
     <scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
         <view class="topic-common-list" style="display:{{isCategoryPage}}">
             <view class="topic-list-item"  wx:for="{{pageList}}">
-                <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" data-id="{{item.id}}">
+                <navigator url="/pages/content/content?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                     <image src="{{item.first_img}}" class="cover"></image>
                     <view class="topic-content-title">
                         <text>{{item.title}}</text>

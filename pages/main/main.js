@@ -27,23 +27,7 @@ Page({
     autoplay: false,
     interval: 3000,
     duration: 800,
-    postsList: {},
     pagesList: {},
-    categoriesList: {},
-    postsShowSwiperList: {},
-    isLastPage: false,
-    page: 1,
-    search: '',
-    categories: 0,
-    categoriesName: '',
-    categoriesImage: "",
-    showerror: "none",
-    isCategoryPage: "none",
-    isSearchPage: "none",
-    showallDisplay: "block",
-    displaySwiper: "block",
-    floatDisplay: "none",
-    searchKey: "",
   },
 
   /**
@@ -122,37 +106,6 @@ Page({
         // 转发失败
       }
     }
-  },
-
-  fetchData: function (id) {
-    var self = this;
-    self.setData({
-      hidden: false
-    });
-    const _jwt = wx.getStorageSync('token');
-    const jwt = JSON.parse(_jwt);
-    console.log(jwt)
-    var bearer_jwt = `Bearer ${jwt}`
-    const _openid = wx.getStorageSync('openid');
-    var mydata = { openid: _openid };
-    wx.request({
-      url: Api.getPageByID(id, { mdrender: false }),
-      method: 'POST',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": bearer_jwt
-      },
-      data: mydata,
-      success: function (response) {
-        console.log(response);
-        self.setData({
-          pageData: response.data,
-          // wxParseData: WxParse('md',response.data.content.rendered)
-          wxParseData: WxParse.wxParse('article', 'html', response.data.title, self, 5)
-        });
-        console.log(pageData);
-      }
-    });
   },
 
   fetchPagesData: function () {
