@@ -41,7 +41,7 @@ Page({
       "Content-Type": "application/x-www-form-urlencoded",
       "Authorization": bearer_jwt
     }
-    console.log(header)
+    console.log(header) 
     console.log(bearer_jwt)
     const _openid = wx.getStorageSync('openid');
     var mydata = {openid: _openid};

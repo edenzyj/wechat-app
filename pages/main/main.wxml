@@ -18,6 +18,20 @@
         </block>
     </swiper>
 
+    <import src="../../wxParse/wxParse.wxml"/>
+    
+    <view class="container">
+        <template is="tempHeader"/>
+        <view class="content-article ">
+            <view class="entry-title">
+                {{pageData.title.rendered}}
+            </view>
+            <view class="entry-summary">
+                <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            </view>
+        </view>
+    </view>
+
     <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}">
         <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">

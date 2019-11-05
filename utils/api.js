@@ -1,9 +1,11 @@
+const app = getApp();
+
 import config from 'config.js';
 var domain = config.getDomain;
 var pageCount = config.getPageCount;
 var categoriesID = config.getCategoriesID;
 var indexListType = config.getIndexListType;
-var HOST_URI = 'https://' + domain;
+var HOST_URI = app.globalData.baseURL;
 var HOST_URI_WATCH_LIFE_JSON = 'https://' + domain + '/wp-json/watch-life-net/v1/';
 
 module.exports = {
@@ -78,7 +80,7 @@ module.exports = {
   // 获取内容页数据
   getPostByID: function (id) {
 
-    return HOST_URI + 'posts/' + id;
+    return HOST_URI + 'api/rich_list/';
   },
   // 获取页面列表数据
   getPages: function () {
@@ -88,7 +90,7 @@ module.exports = {
 
   // 获取页面列表数据
   getPageByID: function (id, obj) {
-    return HOST_URI + 'pages/' + id;
+    return HOST_URI + 'api/rich_list/';
   },
   //获取分类列表
   getCategories: function () {
