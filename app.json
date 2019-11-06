@@ -16,7 +16,8 @@
     "pages/account/account",
     "pages/transfer/transfer",
     "pages/reward_fund/reward_fund",
-    "pages/record/record"
+    "pages/record/record",
+    "pages/devices/devices"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -38,7 +39,7 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/equipment/equipment",
+        "pagePath": "pages/devices/devices",
         "iconPath": "image/MTR0.png",
         "selectedIconPath": "image/MTR1.png",
         "text": "仪器"
