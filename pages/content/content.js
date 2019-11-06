@@ -88,10 +88,10 @@ Page({
         console.log(response);
         var jsonObj = JSON.parse(response.data);
         self.setData({
-          pageData: jsonObj,
-          // wxParseData: WxParse('md',response.data.content.rendered)
-          wxParseData: WxParse.wxParse('article', 'html', jsonObj.content, self, 5)
-        });
+          pageData: jsonObj, 
+        })
+        console.log(jsonObj.content);
+        WxParse.wxParse('article', 'html', jsonObj.content, self, 5)
         console.log(jsonObj);
         console.log(jsonObj.title);
       }
