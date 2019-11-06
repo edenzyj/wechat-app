@@ -1,2 +1,22 @@
 <!--pages/devices/devices.wxml-->
-<text>pages/devices/devices.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">仪器列表</view>
+        <view class="page__desc">附近的安提思睡眠仪</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">睡眠仪信息列表</view>
+            <view class="weui-panel__bd" wx:for="{{deviceList}}">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
+                    <view class="weui-media-box__desc">{{item.id}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-footer">
+          已经没有更多了...
+    </view>
+    <button class="weui-btn" type="primary"style="width: 60%;">搜索仪器</button>
+</view>

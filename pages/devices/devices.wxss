@@ -1,1 +1,2 @@
 /* pages/devices/devices.wxss */
+@import '../../weui.wxss';
