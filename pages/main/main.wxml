@@ -17,9 +17,9 @@
             </swiper-item>
         </block>
     </swiper>
-
+    <!-->
     <import src="../../wxParse/wxParse.wxml"/>
-    
+
     <scroll-view style="height:50%;" scroll-y="true" lower-threshold="100rpx">
         <view class="topic-common-list" style="display:{{isCategoryPage}}">
             <view class="topic-list-item"  wx:for="{{pagesList}}">
@@ -43,29 +43,30 @@
             </view>
         </view>
     </scroll-view>
-
-    <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}">
-        <navigator url="/pages/content/content" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="../../image/modle.jpg" />
+    <-->
+    <view wx:for="{{pagesList}}" class="">
+    <view class="content-article-detail weui-panel weui-panel_access"style="display:{{display}}; ">
+        <navigator url="/pages/content/content?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" wx:if="{{item.first_img != null}}">
+            <image class="weui-media-box__thumb" src="{{item.first_img}}" />
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">文章标题</view>
-            <view class="weui-media-box__desc">文章摘要，这里可以写的很长很长很长很长很长很长很长很长很长很长很长很长很长很长</view>
+            <view class="weui-media-box__title"style="padding-left:10rpx;">{{item.title}}</view>
+            <view class="topic-content-title-line"></view>
+            <view class="weui-media-box__desc" style="padding-left:30rpx;">作者：{{item.author}}</view>
+            <view class="weui-media-box__desc"style="padding-left:30rpx;">{{item.time}}</view>
         </view>
-        
         </navigator>
-        <view class="entry-date">
-            <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
-            <text class="entry-date-text">{{detailDate}}2019-11-1 21:00</text>
+        <view class="entry-date"style="padding-left:40rpx;">
             <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-            <text class="entry-icon-text">{{total_comments}}comments</text>
+            <text class="entry-icon-text"style="padding-left:8rpx; ">{{item.comment}}</text>
             <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-            <text class="entry-icon-text">{{detail.pageviews}}pageviews</text>
+<!-->            <text class="entry-icon-text"style="padding-left:8rpx; ">pag</text>    <-->
             <image src="../../image/home-like.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
-            <text class="entry-icon-text">{{likeCount}}likeCount</text>
+            <text class="entry-icon-text"style="padding-left:8rpx; ">{{item.favor}}</text>
         </view>
         
+    </view>
     </view>
 
 </view>

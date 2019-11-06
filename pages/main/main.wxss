@@ -63,16 +63,16 @@ swiper-item image {
 }
 
 .topic-content-title-line{
-  width: 48px;
+  width: 240px;
   padding: 16rpx 0rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   position: absolute;
-  border-bottom: 1px solid #ddd; 
+  border-bottom: 1px solid #aaa; 
   z-index: 2;
-  left: 64rpx;
-  top: 180rpx;
+  left: 200rpx;
+  top: 70rpx;
 }
 
 .topic-content-brief {
