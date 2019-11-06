@@ -1,9 +1,5 @@
 <!--pages/content/content.wxml-->
 
-<view class="title">
-    {{pageData.title}}
-</view>
-
 <import src="../../wxParse/wxParse.wxml"/>
 <view class="page">
     <view class="content-article ">
