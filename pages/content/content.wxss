@@ -1,4 +1,6 @@
 /* pages/content/content.wxss */
+@import '/common.wxss';
+@import '/weui.wxss';
 
 @import '../../wxParse/wxParse.wxss';
 
