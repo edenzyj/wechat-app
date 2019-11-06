@@ -2,17 +2,19 @@
 @import '/common.wxss';
 @import '/weui.wxss';
 
+.content-article {
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+}
+
 .title {
   position: absolute;
-  justify-content: center;
+  justify-content: space-around;
   height: 40rpx;
   z-index: 2;
   font-size: 54rpx;
-  color: #aaf;
+  color: #5a0;
+  left: 40rpx
   
-}
-
-.content {
-  left: 32rpx;
-  right: 32rpx;
 }
