@@ -37,10 +37,14 @@ Page({
         }
         console.log('123456');
         mydata['code'] = res.code;
+        if(app.globalData.account.father != null) {
+          mydata['father'] = app.globalData.account.father;
+          console.log(app.globalData.account.father);
+        }
         console.log(mydata)
         wx.request({
-//          url: "http://web-ErrorCode400.app.secoder.net/login/",
-          url: "http://127.0.0.1:8000/login/",
+//          url: "https://web-ErrorCode400.app.secoder.net/login/",
+          url: app.globalData.baseURL+"login/",
 
           method: 'POST',
           header: {
@@ -49,7 +53,7 @@ Page({
           data: mydata,
           success: function (res) {
             console.log('456789');
-            //console.log(res);
+            console.log(res.data);
             if (res.statusCode != 200) {
               console.log(res.data.msg );
               console.log(res.statusCode);
@@ -63,11 +67,21 @@ Page({
             const _token = JSON.stringify(res.data.token);
             //console.log(_token);
             wx.setStorageSync("token", _token);
-            wx.setStorageSync("openId", res.data.openId);
+            wx.setStorageSync("openid", res.data.openid);
             console.log(_token);
             console.log(res.data.openid);
             //that.goToIndex();
             getApp().globalData.regFlag = true;
+            app.update_account()
+            wx.showToast({
+              title: '登录成功',
+              duration: 1000
+            });
+            setTimeout(function () {
+              //要延时执行的代码
+              wx.navigateBack({})
+
+            }, 1000) //延迟时间 这里是1秒
           }
         });
         /*wx.request({

@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{name}}记录</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview" wx:for="{{list}}">
+            <view class="weui-form-preview__hd" style="margin-top: 20px;">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">{{name}}金额</view>
+                    <view class="weui-form-preview__value_in-hd" wx:if="{{choice==0}}">¥{{item.fields.spend}}</view>
+                    <view class="weui-form-preview__value_in-hd" wx:else>¥{{item.fields.fund}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item" wx:if="{{choice == 1}}">
+                    <view class="weui-form-preview__label">充值来源</view>
+                    <view class="weui-form-preview__value">{{item.fields.nickname}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">时间</view>
+                    <view class="weui-form-preview__value">{{item.fields.time}}</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

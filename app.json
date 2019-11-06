@@ -11,7 +11,12 @@
     "pages/search/search",
     "pages/loginpage/loginpage",
     "pages/reward/reward",
-    "pages/query/query"
+    "pages/query/query",
+    "pages/charge/charge",
+    "pages/account/account",
+    "pages/transfer/transfer",
+    "pages/reward_fund/reward_fund",
+    "pages/record/record"
   ],
   "window": {
     "navigationBarTextStyle": "white",

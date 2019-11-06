@@ -1,0 +1,50 @@
+<!--pages/account/account.wxml-->
+<view class="header">
+  <image src="{{thumb}}" class="thumb"></image>
+  <text class="nickname">{{nickname}}</text>
+  <text class="viplevel">VIP等级：{{account.vip_lever}}</text>
+</view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block>
+                <view class="weui-grid">
+                    <image class="weui-grid__icon" src="/image/invest.png" />
+                    <view class="weui-grid__label">钱包</view>
+                    <view class="weui-grid__label weui-media-box__desc">￥{{account.bank}}</view>
+                </view>
+                <view class="weui-grid">
+                    <image class="weui-grid__icon" src="/image/score.png" />
+                    <view class="weui-grid__label">积分</view>
+                    <view class="weui-grid__label weui-media-box__desc">{{account.points}}</view>
+                </view>
+                <view class="weui-grid">
+                    <image class="weui-grid__icon" src="/image/left.png" />
+                    <view class="weui-grid__label">使用权</view>
+                    <view class="weui-grid__label weui-media-box__desc">{{account.usage_count}}</view>
+                </view>
+            </block>
+        </view>
+        <view class="weui-panel weui-panel_access">
+        <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            
+            <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">资金充值</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/transfer/transfer" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            
+            <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">积分充值</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">余额转让</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </view>
+

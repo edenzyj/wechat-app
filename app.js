@@ -12,7 +12,7 @@ App({
       success: function (res) {
         var data = {'code': res.code}
         wx.request({
-          url: that.globalData.loginURL,
+          url: that.globalData.baseURL+'login/',
           method: 'POST',
           data: data,
           success: function (res) {
@@ -50,15 +50,58 @@ App({
       }
     })*/
   },
+  update_account: function () {
+    var self = this
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
+    var header = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": bearer_jwt
+    }
+    const _openid = wx.getStorageSync('openid');
+
+    var mydata = { openid: _openid };
+    //账户界面加载时从后端获取用户余额
+
+    wx.request({
+      //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
+      url: self.globalData.baseURL + "get_app_account_data/",
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: mydata,
+      success: function (res) {
+        //        console.log(res.data)
+        self.globalData.account = res.data
+        //        console.log(self.data.account)
+      }
+    })
+
+  },
+
   getLoginURL: function() {
     return globalData.loginURL
   },
   globalData: {
     nickname: "未登录",
-    head: "/image/ano_user.jpg",
+    head: "/image/no_user.png",
     hasthumb: false,
     userInfo: null,
     regFlag: false,
-    loginURL: "web-ErrorCode400.app.secoder.net/login"
-  }
+    loginURL: "http://183.172.140.221:8000/login/",
+    baseURL: "http://183.172.140.221:8000/",
+//    baseURL: "https://web-ErrorCode400.app.secoder.net/"
+    k: 1.0,
+    account: {
+      bank: 0,
+      points: 0,
+      usage_count: 0,
+      vip_lever: 0,
+      father: null,
+      fund: 0,
+    },
+  },
 })
