@@ -12,7 +12,7 @@ App({
       success: function (res) {
         var data = {'code': res.code}
         wx.request({
-          url: that.globalData.loginURL,
+          url: that.globalData.baseURL+'login/',
           method: 'POST',
           data: data,
           success: function (res) {
@@ -91,8 +91,8 @@ App({
     hasthumb: false,
     userInfo: null,
     regFlag: false,
-    loginURL: "127.0.0.1:8000/login",
-    baseURL: "http://101.5.209.174:8000/",
+    loginURL: "http://183.172.140.221:8000/login/",
+    baseURL: "http://183.172.140.221:8000/",
 //    baseURL: "https://web-ErrorCode400.app.secoder.net/"
     k: 1.0,
     account: {
