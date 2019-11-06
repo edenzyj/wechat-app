@@ -98,7 +98,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '安提思睡眠仪小程序',
-      path: 'pages/index/index',
+      path: 'pages/main/main',
       success: function (res) {
         // 转发成功
       },
