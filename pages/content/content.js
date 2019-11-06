@@ -69,12 +69,13 @@ Page({
     self.setData({
       hidden: false
     });
+    console.log(id);
     const _jwt = wx.getStorageSync('token');
     const jwt = JSON.parse(_jwt);
     console.log(jwt)
     var bearer_jwt = `Bearer ${jwt}`
     const _openid = wx.getStorageSync('openid');
-    var mydata = { openid: _openid };
+    var mydata = { openid: _openid, id: id };
     wx.request({
       url: Api.getPageByID(id, { mdrender: false }),
       method: 'POST',
@@ -85,12 +86,14 @@ Page({
       data: mydata,
       success: function (response) {
         console.log(response);
+        var jsonObj = JSON.parse(response.data);
         self.setData({
-          pageData: response.data,
+          pageData: jsonObj,
           // wxParseData: WxParse('md',response.data.content.rendered)
-          wxParseData: WxParse.wxParse('article', 'html', response.data.content, self, 5)
+          wxParseData: WxParse.wxParse('article', 'html', jsonObj.content, self, 5)
         });
-        console.log(pageData);
+        console.log(jsonObj);
+        console.log(jsonObj.title);
       }
     });
   },
