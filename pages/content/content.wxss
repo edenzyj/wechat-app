@@ -2,11 +2,7 @@
 @import '/common.wxss';
 @import '/weui.wxss';
 
-.content-article {
-  position: absolute;
-  left: 32rpx;
-  right: 32rpx;
-}
+@import '../../wxParse/wxParse.wxss';
 
 .title {
   position: absolute;
@@ -17,4 +13,15 @@
   color: #5a0;
   left: 40rpx
   
+}
+
+.container {
+  height: 60rpx
+  
+}
+
+.content-article {
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
 }
