@@ -29,3 +29,89 @@ swiper-item image {
   margin-top: 40rpx;
   margin-bottom: 24px;
 }
+
+.topic-list-item {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 30rpx;
+  background: #fff;
+}
+
+.topic-list-item image.cover {
+  width: 100%;
+  height: 375rpx;
+  filter: blur(2px);
+}
+
+.topic-content-title {
+  padding: 16rpx 0rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  /* border-bottom: 1px solid #fff; */
+  z-index: 2;
+  left: 60rpx;
+  top: 120rpx;
+}
+
+.topic-content-title text {
+  font-size: 48rpx;
+  line-height: 48rpx;
+  color: #000;
+}
+
+.topic-content-title-line{
+  width: 48px;
+  padding: 16rpx 0rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  border-bottom: 1px solid #ddd; 
+  z-index: 2;
+  left: 64rpx;
+  top: 180rpx;
+}
+
+.topic-content-brief {
+  /* padding: 0rpx 30rpx 30rpx; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 2;
+  left: 60rpx;
+  top: 240rpx;
+}
+
+.topic-content-brief text {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #000;
+}
+
+.topic-authorName {
+  position: absolute;
+  z-index: 2;
+  left: 60rpx;
+  top: 300rpx;
+}
+
+.topic-authorName txt {
+  font-size: 32rpx;
+  color: #aaa;
+}
+
+.topic-date {
+  position: absolute;
+  z-index: 2;
+  left: 60rpx;
+  top: 340rpx;
+}
+
+.topic-date txt {
+  font-size: 28rpx;
+  color: #aaa;
+}

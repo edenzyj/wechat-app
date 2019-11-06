@@ -125,11 +125,13 @@ Page({
       },
       data: mydata,
       success: function (response) {
-        var data = JSON.parse(response.data);
+        var resData = JSON.parse(response.data);
         self.setData({
-          pagesList: data
+          pagesList: resData
         })
-      }
+        console.log(response.data)
+        console.log(resData)
+      },
     });
   }
 })
