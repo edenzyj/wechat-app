@@ -52,14 +52,12 @@
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
             <view class="weui-media-box__title"style="padding-left:10rpx;">{{item.title}}</view>
+            <view class="topic-content-title-line"></view>
             <view class="weui-media-box__desc" style="padding-left:30rpx;">作者：{{item.author}}</view>
             <view class="weui-media-box__desc"style="padding-left:30rpx;">{{item.time}}</view>
         </view>
-        
         </navigator>
         <view class="entry-date"style="padding-left:40rpx;">
-            <image src="../../image/calendar.png" style="height:24rpx;width:24rpx;"></image>
-            <text class="entry-date-text" style="padding-left:8rpx; ">{{item.time}}</text>
             <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
             <text class="entry-icon-text"style="padding-left:8rpx; ">{{item.comment}}</text>
             <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
