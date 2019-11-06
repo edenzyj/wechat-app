@@ -8,6 +8,7 @@ App({
     wx.setStorageSync('logs', logs)
     
     // 登录
+    /*
     wx.login({
       success: function (res) {
         var data = {'code': res.code}
@@ -27,7 +28,9 @@ App({
           }
         });
       }
+  
     });
+    */
     /*
     // 获取用户信息
     wx.getSetting({

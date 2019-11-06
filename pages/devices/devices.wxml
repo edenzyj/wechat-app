@@ -8,15 +8,16 @@
         <view class="weui-panel weui-panel_access">
             <view class="weui-panel__hd">睡眠仪信息列表</view>
             <view class="weui-panel__bd" wx:for="{{deviceList}}">
-                <view class="weui-media-box weui-media-box_text">
+                <navigator url="/pages/equipment/equipment?id={{item.deviceId}}&name={{item.name}}"class="weui-media-box weui-media-box_text">
                     <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
-                    <view class="weui-media-box__desc">{{item.id}}</view>
-                </view>
+                    <view class="weui-media-box__desc">设备编号：{{item.deviceId}}</view>
+                    <view class="weui-media-box__desc">信号强度：{{item.RSSI}}</view>
+                </navigator>
             </view>
         </view>
     </view>
     <view class="weui-footer">
           已经没有更多了...
     </view>
-    <button class="weui-btn" type="primary"style="width: 60%;">搜索仪器</button>
+    <button class="weui-btn" type="primary"style="width: 60%;" bindtap="searchDevices">搜索仪器</button>
 </view>
