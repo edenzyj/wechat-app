@@ -33,31 +33,31 @@ Page({
     self.setData({
       hidden: false
     });
-    console.log(id);
+//    console.log(id);
     const _jwt = wx.getStorageSync('token');
     const jwt = JSON.parse(_jwt);
-    console.log(jwt)
+//    console.log(jwt)
     var bearer_jwt = `Bearer ${jwt}`
     const _openid = wx.getStorageSync('openid');
-    var mydata = { openid: _openid, id: id };
+    var mydata = { id: id };
     wx.request({
       url: Api.getPageByID(id, { mdrender: false }),
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": bearer_jwt
+//        "Authorization": bearer_jwt
       },
       data: mydata,
       success: function (response) {
-        console.log(response);
+//        console.log(response);
         var jsonObj = JSON.parse(response.data);
         self.setData({
           pageData: jsonObj, 
         })
-        console.log(jsonObj.content);
+//        console.log(jsonObj.content);
         WxParse.wxParse('article', 'html', jsonObj.content, self, 5)
-        console.log(jsonObj);
-        console.log(jsonObj.title);
+//        console.log(jsonObj);
+//        console.log(jsonObj.title);
       }
     });
   },
