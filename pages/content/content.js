@@ -12,56 +12,20 @@ Page({
    */
   data: {
     pageData: {},
-    wxParseData: []
+    wxParseData: [],
+    pageId: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      pageId: options.id,
+    })
     this.fetchData(options.id);
     console.log('father = ' + options.shareUserId);
     app.globalData.account.father = options.shareUserId;
-    var page = this.page;
-    wx.request({
-      // url: "http://web-ErrorCode400.app.secoder.net/login/",
-      url: "http://127.0.0.1:17137/content/",
-      method: 'POST',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": bearer_jwt
-      },
-      data: mydata,
-
-      success: function (res) {
-        console.log('456789');
-        //console.log(res);
-        if (res.statusCode != 200) {
-          console.log(res.data.msg);
-          console.log(res.statusCode);
-          return;
-        }
-        for (var i = 0; i < res.data.length; ++i) {
-          if (res.data[i].type == 'text') {
-            page.push({
-              type: false,
-              content: res.data[i].content,
-              src: '',
-              style: '',
-              clss: '',
-            });
-          } else {
-            page.push({
-              type: true,
-              src: res.data[i].img,
-              content: '',
-              style: 'height:540rpx;width:720rpx;',
-              clss: '',
-            });
-          }
-        }
-      }
-    });
   },
 
   fetchData: function (id) {
@@ -146,7 +110,7 @@ Page({
   onShareAppMessage: function () {
     console.log("share on content" + wx.getStorageSync('openid'));
     return {
-      path: '/pages/content/content?shareUserId=' + wx.getStorageSync('openid')
+      path: '/pages/content/content?shareUserId=' + wx.getStorageSync('openid')+'&'+'id='+this.data.pageId,
     }
   }
 })
