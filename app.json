@@ -19,7 +19,8 @@
     "pages/record/record",
     "pages/devices/devices",
     "pages/deliver/deliver",
-    "pages/deliver/deliver_share/deliver_share"
+    "pages/deliver/deliver_share/deliver_share",
+    "pages/deliver/receiver/receiver"
   ],
   "window": {
     "navigationBarTextStyle": "white",

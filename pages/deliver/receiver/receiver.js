@@ -1,20 +1,18 @@
-// pages/deliver/deliver_share/deliver_share.js
+// pages/deliver/receiver/receiver.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    money: 0,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      money: options.value,
-    })
+
   },
 
   /**
@@ -63,11 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      path: '../receiver/receiver?shareUserId=' + wx.getStorageSync('openid') + '&value='+ this.data.money,
-    }
-  },
-  myback:function() {
-    wx.navigateBack({})
+
   }
 })
