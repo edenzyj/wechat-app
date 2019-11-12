@@ -64,7 +64,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      path: '../receiver/receiver?shareUserId=' + wx.getStorageSync('openid') + '&value='+ this.data.money,
+      path: '../receiver/receiver?openid=' + wx.getStorageSync('openid') + '&value='+ this.data.money,
     }
   },
   myback:function() {

@@ -106,5 +106,6 @@ App({
       father: null,
       fund: 0,
     },
+
   },
 })

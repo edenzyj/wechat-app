@@ -1,4 +1,5 @@
 // pages/deliver/receiver/receiver.js
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //登录帐号
+    while (app.globalData.regFlag == false) {
+      wx.showToast({
+        title: '请先登录',
+        image: "/image/warning.png",
+        duration: 1000
+      })
+      wx.navigateTo({
+        url: 'pages/loginpage/loginpage',
+      })
+    }
+    wx.showLoading({
+      title: '加载中',
+    });
+    //建立领取关系
+  //  if (app.connect('change_app_account', {}))
+    wx.hideLoading();
   },
 
   /**
