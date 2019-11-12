@@ -17,7 +17,9 @@
     "pages/transfer/transfer",
     "pages/reward_fund/reward_fund",
     "pages/record/record",
-    "pages/devices/devices"
+    "pages/devices/devices",
+    "pages/deliver/deliver",
+    "pages/deliver/deliver_share/deliver_share"
   ],
   "window": {
     "navigationBarTextStyle": "white",

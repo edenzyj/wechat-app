@@ -95,7 +95,7 @@ App({
     userInfo: null,
     regFlag: false,
     loginURL: "http://183.172.140.221:8000/login/",
-    baseURL: "http://183.172.140.221:8000/",
+    baseURL: "http://183.172.141.85:8000/",
 //    baseURL: "https://web-ErrorCode400.app.secoder.net/"
     k: 1.0,
     account: {
