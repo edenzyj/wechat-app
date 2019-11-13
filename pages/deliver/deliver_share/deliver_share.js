@@ -1,39 +1,19 @@
-// pages/reward_fund/reward_fund.js
-
-const app = getApp()
+// pages/deliver/deliver_share/deliver_share.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    fund: 0,
+    money: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //登录后可以使用
-    /*
-    if (app.globalData.regFlag === false) {
-      wx.showToast({
-        title: '尚未登录',
-        image: "/image/warning.png",
-        duration: 2000
-      });
-      setTimeout(function () {
-        //要延时执行的代码
-        wx.navigateBack({})
-
-      }, 2000) //延迟时间 这里是1秒
-      return;
-    }
-    */
-    app.update_account()
-    console.log(app.globalData.account)
     this.setData({
-      fund: app.globalData.account.fund,
+      money: options.value,
     })
   },
 
@@ -48,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    app.update_account()
+
   },
 
   /**
@@ -83,6 +63,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '../receiver/receiver?openid=' + wx.getStorageSync('openid') + '&value='+ this.data.money,
+    }
+  },
+  myback:function() {
+    wx.navigateBack({})
   }
 })

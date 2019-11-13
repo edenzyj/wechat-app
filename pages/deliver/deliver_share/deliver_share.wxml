@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="page__hd">
+      <view class="page__title">确认转让</view>
+      <view class="page__desc">点击右上角分享将本页分享给其他用户</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">转让金额</view>
+            </view>
+            <view class="weui-cell__bd">
+                <view class="weui-input" style="color: rgba(0,0,0,0.6);">{{money}}</view>
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn" type="primary" bindtap="myback">返回</button>
+  </view>
+</view>
