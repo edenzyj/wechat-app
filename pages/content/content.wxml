@@ -6,7 +6,7 @@
         <view class="page__hd page__title">
             {{pageData.title}}
         </view>
-        <view class="page__bd" style="padding:20rpx;">
+        <view class="page__bd" style="padding:32rpx;">
             <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
         </view>
     </view>
