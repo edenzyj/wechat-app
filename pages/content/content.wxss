@@ -6,22 +6,10 @@
 
 .title {
   position: absolute;
-  justify-content: space-around;
+  justify-content: center;
   height: 40rpx;
   z-index: 2;
   font-size: 54rpx;
-  color: #5a0;
-  left: 40rpx
+  color: #aaf;
   
-}
-
-.container {
-  height: 60rpx
-  
-}
-
-.content-article {
-  position: absolute;
-  left: 32rpx;
-  right: 32rpx;
 }

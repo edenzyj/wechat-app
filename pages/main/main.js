@@ -116,13 +116,13 @@ Page({
     console.log(jwt)
     var bearer_jwt = `Bearer ${jwt}`
     const _openid = wx.getStorageSync('openid');
-    var mydata = { openid: _openid };
+    var mydata = {};
     wx.request({
       url: Api.getPages(),
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": bearer_jwt
+//        "Authorization": bearer_jwt
       },
       data: mydata,
       success: function (response) {

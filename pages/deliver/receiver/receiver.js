@@ -1,5 +1,4 @@
-// pages/reward_fund/reward_fund.js
-
+// pages/deliver/receiver/receiver.js
 const app = getApp()
 Page({
 
@@ -7,34 +6,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fund: 0,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //登录后可以使用
-    /*
-    if (app.globalData.regFlag === false) {
+    //登录帐号
+    while (app.globalData.regFlag == false) {
       wx.showToast({
-        title: '尚未登录',
+        title: '请先登录',
         image: "/image/warning.png",
-        duration: 2000
-      });
-      setTimeout(function () {
-        //要延时执行的代码
-        wx.navigateBack({})
-
-      }, 2000) //延迟时间 这里是1秒
-      return;
+        duration: 1000
+      })
+      wx.navigateTo({
+        url: 'pages/loginpage/loginpage',
+      })
     }
-    */
-    app.update_account()
-    console.log(app.globalData.account)
-    this.setData({
-      fund: app.globalData.account.fund,
-    })
+    wx.showLoading({
+      title: '加载中',
+    });
+    //建立领取关系
+  //  if (app.connect('change_app_account', {}))
+    wx.hideLoading();
   },
 
   /**
@@ -48,7 +43,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    app.update_account()
+
   },
 
   /**
