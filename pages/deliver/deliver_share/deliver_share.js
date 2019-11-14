@@ -14,6 +14,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       money: options.value,
+      id: options.id,
     })
   },
 
@@ -64,7 +65,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      path: '../receiver/receiver?openid=' + wx.getStorageSync('openid') + '&value='+ this.data.money,
+      path: '/pages/deliver/receiver/receiver?id=' + this.data.id + '&value='+ this.data.money,
     }
   },
   myback:function() {
