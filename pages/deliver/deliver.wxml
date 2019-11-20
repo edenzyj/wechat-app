@@ -23,5 +23,6 @@
         </view>
     </view>
     <button class="weui-btn" type="primary" bindtap="mydeliver">确认转换</button>
+    <button class="weui-btn" type="primary" bindtap="myqrcode">生成海报</button>
   </view>
 </view>
