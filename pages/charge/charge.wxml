@@ -8,19 +8,17 @@
                               <view class="">
                                 <view url="" class="weui-cell weui-cell_access">
                                   
-                                    <view class="weui-cell__bd weui-cell_primary">
+                                    <view class="weui-cell__bd weui-cell_primary"> 
                                         <view>{{item.title}}</view>
                                     </view>
-                                    <view class="weui-cell__ft"><button bindtap="sendcharge" data-id="{{index}}">购买</button></view>
+                                    <view class="weui-cell__ft"><button bindtap="sendcharge" bindtap="bindViewTap" data-id="{{index}}">购买</button></view>
                                   
-                                  </view>
                                 </view>
-                                <view class="weui-media-box weui-media-box_text weui-media-box__desc">{{item.desc}}
                               </view>
+                              <view class="weui-media-box weui-media-box_text weui-media-box__desc">{{item.desc}}</view>
                           </view>
                       </view>
                   </view>
             </view>
-
     </view>
 </view>
