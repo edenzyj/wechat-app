@@ -160,7 +160,6 @@ Page({
     });
   },
 
-  //事件处理函数
   bindViewTap: function () {
     // wx.navigateTo({
     //   url: '../logs/logs'
@@ -169,16 +168,20 @@ Page({
     const _jwt = wx.getStorageSync('token');
     const jwt = JSON.parse(_jwt);
     var bearer_jwt = `Bearer ${jwt}`
+    const _openid = wx.getStorageSync('openid');
+    var mydata = { openid: _openid };
     wx.request({
       url: app.globalData.baseURL + "wxpay/pay/",
       method: 'POST',
       header: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         "Authorization": bearer_jwt
       },
+      data: mydata,
       success: function (res) {
         console.log(res.data)
         console.log(res.data.paySign)
+        //const payData = JSON.parse(res.data)
         wx.requestPayment({
           timeStamp: res.data.timeStamp,
           nonceStr: res.data.nonceStr,
@@ -190,7 +193,8 @@ Page({
           },
           'fail': function (res) {
             console.log(res)
-          }
+          },
+
         })
       }
     })
