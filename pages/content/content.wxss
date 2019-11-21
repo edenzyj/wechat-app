@@ -13,8 +13,3 @@
   color: #aaf;
   
 }
-
-.content {
-  left: 32rpx;
-  right: 32rpx;
-}
