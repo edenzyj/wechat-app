@@ -25,7 +25,7 @@
             </block>
         </view>
         <view class="weui-panel weui-panel_access">
-        <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <navigator url="/pages/channel/channel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             
             <view class="weui-cell__bd weui-cell_primary">
                 <view style="font-size:36rpx">添加渠道</view>
