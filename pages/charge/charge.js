@@ -7,8 +7,9 @@ Page({
    */
   data: {
     options: new Array(),
-
-
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
@@ -27,7 +28,6 @@ Page({
       setTimeout(function () {
         //要延时执行的代码
         wx.navigateBack({})
-
       }, 2000) //延迟时间 这里是1秒
       return;
     }
@@ -68,15 +68,40 @@ Page({
               price: resdata[i].base+resdata[i].bonus,
             })
           }
-          
         }
         self.setData({
           options: self.data.options,
         })
         console.log(self.data.options)
-
       }
     })
+
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
   },
 
   /**
@@ -127,12 +152,54 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
   },
+
+  bindViewTap: function () {
+    // wx.navigateTo({
+    //   url: '../logs/logs'
+    // })
+    console.log('aa')
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
+    const _openid = wx.getStorageSync('openid');
+    var mydata = { openid: _openid };
+    wx.request({
+      url: app.globalData.baseURL + "wxpay/pay/",
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: mydata,
+      success: function (res) {
+        console.log(res.data)
+        console.log(res.data.paySign)
+        //const payData = JSON.parse(res.data)
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          'success': function (res) {
+            console.log(res)
+          },
+          'fail': function (res) {
+            console.log(res)
+          },
+
+        })
+      }
+    })
+  },
+
   sendcharge: function (e) {
     var self = this
     var id = e.currentTarget.dataset.id
@@ -142,7 +209,6 @@ Page({
     }
     console.log(id)
     console.log(self.data.options[id])
-
     const _jwt = wx.getStorageSync('token');
     const jwt = JSON.parse(_jwt);
     var bearer_jwt = `Bearer ${jwt}`
@@ -175,6 +241,15 @@ Page({
           duration: 1500
         });
       }
+    })
+  },
+
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
     })
   }
 })

@@ -21,7 +21,7 @@
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/pay/pay" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <!--链接到网店网址-->
       <view class="weui-cell__hd"><image src="/image/shopping.png" style="width: 24px;height: 24px;margin-right: 12px" /></view>
       <view class="weui-cell__bd weui-cell_primary">

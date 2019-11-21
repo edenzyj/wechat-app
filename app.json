@@ -22,7 +22,8 @@
     "pages/deliver/deliver_share/deliver_share",
     "pages/deliver/receiver/receiver",
     "pages/deliver/qrcode_share/qrcode_share",
-    "pages/channel/channel"
+    "pages/channel/channel",
+    "pages/pay/pay"
   ],
   "window": {
     "navigationBarTextStyle": "white",
