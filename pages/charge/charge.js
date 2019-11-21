@@ -285,6 +285,7 @@ Page({
       }
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
   },
 
   getUserInfo: function (e) {
@@ -294,6 +295,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+=======
+
+>>>>>>> master
 =======
 
 >>>>>>> master
