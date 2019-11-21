@@ -20,7 +20,9 @@
     "pages/devices/devices",
     "pages/deliver/deliver",
     "pages/deliver/deliver_share/deliver_share",
-    "pages/deliver/receiver/receiver"
+    "pages/deliver/receiver/receiver",
+    "pages/deliver/qrcode_share/qrcode_share",
+    "pages/channel/channel"
   ],
   "window": {
     "navigationBarTextStyle": "white",

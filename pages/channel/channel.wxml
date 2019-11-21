@@ -1,0 +1,5 @@
+<!--pages/channel/channel.wxml-->
+  <view style="padding: 50rpx;">
+    <button class="weui-btn" type="primary" bindtap="click">扫一扫</button>
+  </view>
+  <text>{{show}}</text>

@@ -88,6 +88,10 @@ App({
   getLoginURL: function() {
     return globalData.loginURL
   },
+  connect: function(url, data) {
+
+
+  },
   globalData: {
     nickname: "未登录",
     head: "/image/no_user.png",
