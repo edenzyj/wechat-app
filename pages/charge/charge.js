@@ -155,7 +155,8 @@ Page({
 //    console.log(_delta)
 //    console.log(JSON.stringify(_delta))
 //    var paydata = { openid: _openid, money: self.data.options[id].base*100 };
-    var paydata = { openid: _openid, money: 1 };
+//    var paydata = { openid: _openid, money: 1 };
+    var paydata = { openid: _openid, money: self.data.options[id].base };
     var paySuccessFlag = false;
     wx.request({
       url: app.globalData.baseURL + "wxpay/pay/",
