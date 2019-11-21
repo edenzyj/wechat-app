@@ -28,6 +28,13 @@
         <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             
             <view class="weui-cell__bd weui-cell_primary">
+                <view style="font-size:36rpx">添加渠道</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/charge/charge" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            
+            <view class="weui-cell__bd weui-cell_primary">
                 <view style="font-size:36rpx">资金充值</view>
             </view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
