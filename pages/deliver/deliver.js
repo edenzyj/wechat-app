@@ -18,8 +18,8 @@ Page({
   onLoad: function (options) {
     app.update_account()  //重新加载用户信息
     this.setData({
-      left_money: app.globalData.account.bank,
-      total_money: app.globalData.account.bank,
+      left_money: app.globalData.account.points,
+      total_money: app.globalData.account.points,
       deliver_money: 0,
     })
   },
@@ -92,9 +92,85 @@ Page({
       return;
     }
 
-    //余额足则跳转分享页
-    wx.navigateTo({
-      url: 'deliver_share/deliver_share?value='+JSON.stringify(this.data.deliver_money),
+    var self = this
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
+    var header = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": bearer_jwt
+    }
+    const _openid = wx.getStorageSync('openid');
+
+    var mydata = {score: this.data.deliver_money};
+    mydata.openid = _openid;
+//    console.log(mydata);
+    wx.request({
+      //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
+      url: app.globalData.baseURL + 'red_bag_send/',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: mydata,
+
+      success: function (res) {
+        console.log(res);
+        if (res.statusCode == 200) {
+          wx.navigateTo({
+            url: 'deliver_share/deliver_share?id=' + res.data.id+'&value='+self.data.deliver_money,
+          })
+
+        }
+      }
     })
+  },
+  myqrcode: function() {
+    //余额不足则退出不允许转让
+    if (this.data.deliver_money > this.data.total_money) {
+      wx.showToast({
+        title: '余额不足',
+        image: "/image/warning.png",
+        duration: 1000
+      });
+      return;
+    }
+
+    var self = this
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
+    var header = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": bearer_jwt
+    }
+    const _openid = wx.getStorageSync('openid');
+
+    var mydata = { score: this.data.deliver_money };
+    mydata.openid = _openid;
+    //    console.log(mydata);
+    wx.request({
+      //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
+      url: app.globalData.baseURL + 'red_bag_send/',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: mydata,
+
+      success: function (res) {
+        console.log(res);
+        if (res.statusCode == 200) {
+          //转到二维码页面
+          wx.navigateTo({
+            url: 'qrcode_share/qrcode_share?id=' + res.data.id,
+          })
+
+        }
+      }
+    })
+
   }
 })

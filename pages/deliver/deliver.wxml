@@ -1,13 +1,13 @@
 <view class="page">
   <view class="page__hd">
       <view class="page__title">余额转让</view>
-      <view class="page__desc">将账户内余额分享转让给其他用户</view>
+      <view class="page__desc">将账户内积分余额分享转让给其他用户</view>
   </view>
   <view class="page__bd">
     <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
             <view class="weui-cell__hd">
-                <view class="weui-label">转换金额</view>
+                <view class="weui-label">转让积分</view>
             </view>
             <view class="weui-cell__bd">
                 <input class="weui-input" placeholder="请输入转换金额" bindinput="inputing"/>
@@ -15,7 +15,6 @@
         </view>
         <view class="weui-cell weui-cell_input">
             <view class="weui-cell__hd">
-                <view class="weui-label">获得积分</view>
             </view>
             <view class="weui-cell__bd">
                 <view class="weui-input" style="color: rgba(0,0,0,0.6);">{{left_money}}</view>

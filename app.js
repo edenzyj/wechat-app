@@ -88,16 +88,20 @@ App({
   getLoginURL: function() {
     return globalData.loginURL
   },
+  connect: function(url, data) {
+
+
+  },
   globalData: {
     nickname: "未登录",
     head: "/image/no_user.png",
     hasthumb: false,
     userInfo: null,
     regFlag: false,
-    loginURL: "http://127.0.0.1:8000/login/",
-    baseURL: "http://192.168.0.103:8000/",
-    //baseURL: "http://127.0.0.1:8000/",
-    //baseURL: "https://web-ErrorCode400.app.secoder.net/",
+    loginURL: "http://183.172.140.221:8000/login/",
+    //baseURL: "http://183.172.137.178:8000/",
+    baseURL: "https://web-ErrorCode400.app.secoder.net/",
+    //baseURL: "http://192.168.0.103:8000/",
     k: 1.0,
     account: {
       bank: 0,

@@ -1,11 +1,13 @@
-// pages/deliver/deliver_share/deliver_share.js
+// pages/deliver/qrcode_share/qrcode_share.js
+var QRCode = require('../../../utils/weapp-qrcode.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    money: 0,
+    id: null,
   },
 
   /**
@@ -13,7 +15,6 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      money: options.value,
       id: options.id,
     })
   },
@@ -29,7 +30,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    qrcode = new QRCode('canvas', {
+      // usingIn: this,
+      text: "https://github.com/tomfriwel/weapp-qrcode",
+      image: '/images/bg.jpg',
+      width: 150,
+      height: 150,
+      colorDark: "#1CA4FC",
+      colorLight: "white",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
   },
 
   /**
@@ -64,11 +74,24 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      path: '/pages/deliver/receiver/receiver?id=' + this.data.id + '&value='+ this.data.money,
-    }
+
   },
-  myback:function() {
-    wx.navigateBack({})
+  // 长按保存
+  save: function () {
+    console.log('save')
+    wx.showActionSheet({
+      itemList: ['保存图片'],
+      success: function (res) {
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0) {
+          qrcode.exportImage(function (path) {
+            wx.saveImageToPhotosAlbum({
+              filePath: path,
+            })
+          })
+        }
+      }
+    })
   }
+
 })

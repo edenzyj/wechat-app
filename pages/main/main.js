@@ -116,7 +116,9 @@ Page({
     console.log(jwt)
     var bearer_jwt = `Bearer ${jwt}`
     const _openid = wx.getStorageSync('openid');
-    var mydata = {};
+    var mydata = {openid: "default"};
+    if (app.globalData.regFlag) mydata.openid = _openid;
+    console.log(mydata);
     wx.request({
       url: Api.getPages(),
       method: 'POST',
