@@ -66,6 +66,7 @@ Page({
               title: "满" + resdata[i].base + "元送" + resdata[i].bonus+"元",
               desc: "暂无", 
               price: resdata[i].base+resdata[i].bonus,
+              base: resdata[i].base,
             })
           }
           
@@ -153,13 +154,53 @@ Page({
     const _openid = wx.getStorageSync('openid');
 //    console.log(_delta)
 //    console.log(JSON.stringify(_delta))
-    
-    var mydata = { openid: _openid , delta: JSON.stringify(_delta)};
-    //点击充值按钮，向服务器发送充值请求
+//    var paydata = { openid: _openid, money: self.data.options[id].base*100 };
+    var paydata = { openid: _openid, money: 1 };
+    var paySuccessFlag = false;
+    wx.request({
+      url: app.globalData.baseURL + "wxpay/pay/",
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": bearer_jwt
+      },
+      data: paydata,
+      success: function (res) {
+        console.log(res.data)
+        console.log(res.data.paySign)
+        //const payData = JSON.parse(res.data)
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          'success': function (res) {
+            console.log('success')
+            console.log(res)
+            paySuccessFlag = true;
+            self.pay({ openid: _openid, delta: JSON.stringify(_delta) })
+          },
+          'fail': function (res) {
+            console.log('fail')
+            console.log(res)
+            paySuccessFlag = false;
+          },
+
+        })
+      }
+    })
+
+
+  },
+  pay: function(mydata) {
+    const _jwt = wx.getStorageSync('token');
+    const jwt = JSON.parse(_jwt);
+    var bearer_jwt = `Bearer ${jwt}`
 
     wx.request({
       //url: "https://web-ErrorCode400.app.secoder.net/change_app_account/",
-      url: app.globalData.baseURL+"change_app_account/",
+      url: app.globalData.baseURL + "change_app_account/",
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -176,5 +217,6 @@ Page({
         });
       }
     })
+
   }
 })
